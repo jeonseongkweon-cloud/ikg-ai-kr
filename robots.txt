@@ -1,1 +1,4 @@
+User-agent: *
+Allow: /
 
+Sitemap: https://ikg.ai.kr/sitemap.xml
