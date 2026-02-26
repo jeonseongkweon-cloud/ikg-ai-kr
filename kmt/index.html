@@ -1,245 +1,233 @@
 <!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
 
-  <title>계명태권도 | 아이의 자신감과 안전이 자라는 곳</title>
-  <meta name="description" content="유치부·초등 전문. 계명태권도 안내(홈페이지/전화/위치/지도)." />
+<title>계명태권도 | 아이의 자신감과 안전이 자라는 곳</title>
 
-  <meta property="og:title" content="계명태권도" />
-  <meta property="og:description" content="아이의 자신감과 안전이 자라는 곳" />
-  <meta property="og:image" content="https://static.wixstatic.com/media/abf917_4b6ff29c9a9a40b78c978dd117279bda~mv2.jpg" />
+<meta property="og:title" content="계명태권도" />
+<meta property="og:description" content="아이의 자신감과 안전이 자라는 곳" />
+<meta property="og:image" content="https://static.wixstatic.com/media/abf917_90d293f61d704e2a804fc61d932aad41~mv2.png" />
 
-  <!-- ✅ 문제 원인 확인을 위해: 일단 외부 CSS는 '빼고' 테스트 권장
-       잘 나오면 -> 다시 넣되, 아래의 !important가 덮어씁니다. -->
-  <!-- <link rel="stylesheet" href="../assets/css/style.css" /> -->
+<style>
+:root{
+  --ink:#0f172a;
+  --muted:#475569;
+  --line:#e2e8f0;
+  --radius:28px;
+  --max:1000px;
+}
 
-  <style>
-    :root{
-      --ink:#0f172a;
-      --muted:#475569;
-      --line: rgba(226,232,240,.9);
-      --glass: rgba(255,255,255,.78);
-      --shadowA: 0 26px 60px rgba(2,6,23,.14);
-      --shadowB: 0 14px 34px rgba(2,6,23,.12);
-      --radius: 26px;
-      --max: 980px;
-    }
-    body{
-      margin:0;
-      color:var(--ink);
-      background:
-        radial-gradient(900px 320px at 12% 10%, rgba(37,99,235,.10), transparent 60%),
-        radial-gradient(760px 320px at 92% 0%, rgba(59,130,246,.08), transparent 58%),
-        #ffffff;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", Arial, sans-serif;
-    }
-    .wrap{ max-width:var(--max); margin:0 auto; padding:18px 14px 22px; }
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, "Noto Sans KR", sans-serif;
+  background:#f8fafc;
+  color:var(--ink);
+}
 
-    .topbar{
-      display:flex; justify-content:space-between; align-items:center; gap:10px;
-      margin-bottom:12px;
-    }
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap:10px;
-      padding:10px 12px; border-radius:999px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.85);
-      box-shadow:var(--shadowB);
-      text-decoration:none; color:var(--ink);
-      font-weight:900; font-size:12.5px;
-      backdrop-filter: blur(10px);
-    }
+.wrap{
+  max-width:var(--max);
+  margin:auto;
+  padding:20px 16px 30px;
+}
 
-    /* =========================
-       ✅ HERO: "절대 사진 안 사라지게" 핵심
-       ========================= */
-    .hero{
-      position:relative;
-      border-radius: var(--radius);
-      overflow:hidden;
-      border:1px solid var(--line);
-      box-shadow: var(--shadowA);
-      background: #fff;
+/* 상단 버튼 */
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:14px;
+}
 
-      /* ✅ 1) 높이 0 방지 */
-      min-height: 280px;
+.btn{
+  padding:10px 14px;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:800;
+  font-size:13px;
+  border:1px solid var(--line);
+  background:white;
+  color:var(--ink);
+}
 
-      /* ✅ 2) 모바일에서 안정적인 비율 */
-      aspect-ratio: 16 / 9;
+/* HERO */
+.hero{
+  border-radius:var(--radius);
+  overflow:hidden;
+  background:white;
+  box-shadow:0 18px 50px rgba(0,0,0,.08);
+}
 
-      /* ✅ 3) img가 죽어도 배경으로 사진 유지 */
-      background-image: url("https://static.wixstatic.com/media/abf917_4b6ff29c9a9a40b78c978dd117279bda~mv2.jpg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
+.hero img{
+  width:100%;
+  height:auto;
+  display:block;
+}
 
-    /* ✅ 어떤 공통 CSS가 와도 이미지가 나오도록 강제 */
-    .hero img{
-      position:absolute;
-      inset:0;
-      width:100% !important;
-      height:100% !important;
-      object-fit: cover !important;
-      display:block !important;
-      opacity: 1 !important;
-      transform: translateZ(0);
-    }
+/* 텍스트 영역 */
+.heroContent{
+  padding:22px;
+  text-align:left;
+}
 
-    .hero:after{
-      content:"";
-      position:absolute; inset:-1px;
-      background:
-        radial-gradient(900px 280px at 12% 10%, rgba(37,99,235,.14), transparent 62%),
-        radial-gradient(700px 240px at 92% 0%, rgba(59,130,246,.10), transparent 58%),
-        linear-gradient(180deg, rgba(2,6,23,.02), rgba(2,6,23,.12));
-      pointer-events:none;
-      mix-blend-mode:multiply;
-    }
+.heroContent h1{
+  margin:0;
+  font-size:22px;
+  font-weight:900;
+  line-height:1.2;
+}
 
-    .overlay{
-      position:absolute;
-      left:14px; right:14px; bottom:14px;
-      padding:16px 16px;
-      border-radius:22px;
-      border:1px solid rgba(255,255,255,.60);
-      background: var(--glass);
-      backdrop-filter: blur(12px);
-      box-shadow: 0 18px 48px rgba(2,6,23,.18);
-      display:flex;
-      align-items:flex-end;
-      justify-content:space-between;
-      gap:14px;
-    }
+.heroContent p{
+  margin:10px 0 18px;
+  font-size:14px;
+  font-weight:600;
+  color:var(--muted);
+}
 
-    .brand h1{ margin:0; font-size:22px; letter-spacing:-.03em; line-height:1.15; font-weight:1000; }
-    .brand p{ margin:6px 0 0; font-size:13px; line-height:1.45; color: rgba(30,41,59,.92); font-weight:850; }
+.cta{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
 
-    .cta{ display:flex; flex-direction:column; gap:10px; align-items:flex-end; }
-    .bigBtn{
-      display:inline-flex; flex-direction:column; align-items:center; justify-content:center;
-      min-width:240px;
-      padding:14px 16px; border-radius:18px;
-      text-decoration:none; font-weight:1000;
-      border:1px solid rgba(37,99,235,.30);
-      background:
-        radial-gradient(260px 90px at 20% 0%, rgba(255,255,255,.80), transparent 62%),
-        radial-gradient(260px 90px at 80% 100%, rgba(255,255,255,.55), transparent 62%),
-        linear-gradient(180deg, rgba(37,99,235,.18), rgba(37,99,235,.06));
-      color:#0b2d7a;
-      box-shadow: 0 18px 42px rgba(2,6,23,.16);
-      text-align:center;
-    }
-    .bigBtn span{ font-size:14.5px; }
-    .bigBtn small{ margin-top:3px; font-size:11.5px; font-weight:900; color: rgba(11,45,122,.78); }
+.bigBtn{
+  display:block;
+  text-align:center;
+  padding:15px;
+  border-radius:18px;
+  text-decoration:none;
+  font-weight:900;
+  font-size:14px;
+  background:linear-gradient(135deg,#2563eb,#1e3a8a);
+  color:white;
+}
 
-    .ghost{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:10px 12px; border-radius:999px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.88);
-      box-shadow: var(--shadowB);
-      text-decoration:none; color: var(--ink);
-      font-weight:1000; font-size:12.5px;
-      backdrop-filter: blur(10px);
-    }
+.phoneBtn{
+  display:block;
+  text-align:center;
+  padding:13px;
+  border-radius:18px;
+  text-decoration:none;
+  font-weight:900;
+  font-size:14px;
+  border:1px solid var(--line);
+  background:white;
+  color:var(--ink);
+}
 
-    .info{
-      margin-top:14px;
-      border-radius:22px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.86);
-      box-shadow: var(--shadowB);
-      padding:14px;
-      backdrop-filter: blur(10px);
-      display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between;
-      gap:10px;
-    }
-    .left{ display:flex; flex-direction:column; gap:4px; min-width:240px; }
-    .label{ font-size:12px; font-weight:1000; color: rgba(15,23,42,.72); }
-    .value{ font-size:13px; font-weight:900; color: rgba(15,23,42,.92); line-height:1.5; }
+/* 정보 카드 */
+.info{
+  margin-top:16px;
+  padding:18px;
+  border-radius:22px;
+  background:white;
+  border:1px solid var(--line);
+}
 
-    .info a{ color:inherit; text-decoration:none; border-bottom:1px dashed rgba(15,23,42,.25); }
-    .foot{ margin:14px 0 6px; text-align:center; color: rgba(15,23,42,.62); font-size:12px; font-weight:850; }
+.info h3{
+  margin:0 0 8px;
+  font-size:13px;
+  font-weight:800;
+  color:var(--muted);
+}
 
-    @media (max-width: 900px){
-      .overlay{ flex-direction:column; align-items:flex-start; }
-      .cta{ align-items:stretch; width:100%; }
-      .bigBtn{ width:100%; min-width:auto; }
-      .hero{ min-height: 320px; } /* 모바일에서 사진 더 확실히 */
-    }
+.info p{
+  margin:0 0 14px;
+  font-size:14px;
+  font-weight:700;
+}
 
-    /* 인쇄 B5 */
-    @page{ size: B5; margin: 10mm; }
-    @media print{
-      body{ background:#fff !important; }
-      .topbar{ display:none !important; }
-      .wrap{ padding:0 !important; max-width:100% !important; }
-      .hero{ box-shadow:none !important; }
-      .hero:after{ display:none !important; }
-      .overlay{ position:static !important; margin:10mm 0 0 !important; box-shadow:none !important; background:#fff !important; backdrop-filter:none !important; }
-      .bigBtn, .ghost, .btn, .info{ box-shadow:none !important; }
-      a{ color:#111827 !important; text-decoration:none !important; border-bottom:none !important; }
-    }
-  </style>
+.infoRow{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.smallBtn{
+  padding:10px 14px;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:800;
+  font-size:13px;
+  border:1px solid var(--line);
+  background:#f1f5f9;
+  color:var(--ink);
+}
+
+/* PC에서만 살짝 겹치게 */
+@media(min-width:900px){
+  .hero{
+    position:relative;
+  }
+  .heroContent{
+    position:absolute;
+    bottom:25px;
+    left:25px;
+    right:25px;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(12px);
+    border-radius:22px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+  }
+}
+
+/* 인쇄 B5 */
+@page{
+  size:B5;
+  margin:10mm;
+}
+
+@media print{
+  body{background:white;}
+  .topbar{display:none;}
+}
+</style>
 </head>
 
 <body>
-  <div class="wrap">
+<div class="wrap">
 
-    <div class="topbar">
-      <a class="btn" href="../">안전 허브로</a>
-      <a class="btn" href="../pages/about/">운영 안내</a>
+<div class="topbar">
+  <a class="btn" href="../">안전 허브로</a>
+  <a class="btn" href="../pages/about/">운영 안내</a>
+</div>
+
+<section class="hero">
+  <img src="https://static.wixstatic.com/media/abf917_90d293f61d704e2a804fc61d932aad41~mv2.png" alt="계명태권도">
+
+  <div class="heroContent">
+    <h1>아이의 자신감과 안전이 자라는 곳</h1>
+    <p>계명태권도 · 유치부·초등 전문<br>
+    상담/시간표/사진은 공식 홈페이지에서 확인하세요.</p>
+
+    <div class="cta">
+      <a class="bigBtn" href="https://계명태권도.com" target="_blank">
+        공식 홈페이지 바로가기 →
+      </a>
+      <a class="phoneBtn" href="tel:010-4477-2772">
+        📞 010-4477-2772 전화 상담
+      </a>
     </div>
-
-    <section class="hero" aria-label="계명태권도 안내">
-      <!-- ✅ img도 유지(접근성/공유용). 배경이미지가 보험 역할 -->
-      <img
-        src="https://static.wixstatic.com/media/abf917_4b6ff29c9a9a40b78c978dd117279bda~mv2.jpg"
-        alt="계명태권도 안내 이미지"
-        loading="eager"
-        decoding="async"
-      />
-
-      <div class="overlay">
-        <div class="brand">
-          <h1>아이의 자신감과 안전이 자라는 곳</h1>
-          <p>계명태권도 · 유치부·초등 전문<br/>상담/시간표/사진은 공식 홈페이지에서 확인하세요.</p>
-        </div>
-
-        <div class="cta">
-          <a class="bigBtn" href="https://계명태권도.com" target="_blank" rel="noopener">
-            <span>공식 홈페이지 바로가기 →</span>
-            <small>시간표 · 상담 · 사진 확인</small>
-          </a>
-          <a class="ghost" href="tel:010-4477-2772">📞 010-4477-2772 전화 상담</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="info" aria-label="위치 및 문의">
-      <div class="left">
-        <div class="label">위치</div>
-        <div class="value">울산 남구 중앙로290번길 53,<br/>강변센트럴하이츠 상가 2층</div>
-      </div>
-      <div class="left">
-        <div class="label">문의</div>
-        <div class="value"><a href="tel:010-4477-2772">010-4477-2772</a></div>
-      </div>
-
-      <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end;">
-        <a class="btn" href="https://계명태권도.com" target="_blank" rel="noopener">홈페이지</a>
-        <a class="btn" target="_blank" rel="noopener"
-           href="https://maps.google.com/?q=%EC%9A%B8%EC%82%B0%20%EB%82%A8%EA%B5%AC%20%EC%A4%91%EC%95%99%EB%A1%9C290%EB%B2%88%EA%B8%B8%2053">
-          지도 열기
-        </a>
-      </div>
-    </section>
-
-    <p class="foot">QR로 들어오신 분을 위한 안내 페이지입니다. 긴급 상황은 119/112가 최우선입니다.</p>
-
   </div>
+</section>
+
+<section class="info">
+  <h3>위치</h3>
+  <p>울산 남구 중앙로290번길 53,<br>
+  강변센트럴하이츠 상가 2층</p>
+
+  <h3>문의</h3>
+  <p>010-4477-2772</p>
+
+  <div class="infoRow">
+    <a class="smallBtn" href="https://계명태권도.com" target="_blank">홈페이지</a>
+    <a class="smallBtn" target="_blank"
+       href="https://maps.google.com/?q=%EC%9A%B8%EC%82%B0%20%EB%82%A8%EA%B5%AC%20%EC%A4%91%EC%95%99%EB%A1%9C290%EB%B2%88%EA%B8%B8%2053">
+      지도 열기
+    </a>
+  </div>
+</section>
+
+</div>
 </body>
 </html>
