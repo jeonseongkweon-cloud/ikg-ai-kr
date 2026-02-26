@@ -4,49 +4,185 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <title>계명태권도 | 아이의 자신감과 안전이 자라는 곳</title>
-  <meta name="description" content="유치부·초등 전문. 안전한 지도, 자신감·기초체력·생활습관. 문의 010-4477-2772" />
+  <meta name="description" content="유치부·초등 전문. 안전한 지도, 자신감·기초체력·생활습관. 공식 홈페이지 바로가기 제공." />
 
   <meta property="og:title" content="계명태권도" />
   <meta property="og:description" content="아이의 자신감과 안전이 자라는 곳" />
-  <meta property="og:image" content="../assets/images/og.jpg" />
+  <meta property="og:image" content="https://static.wixstatic.com/media/abf917_4b6ff29c9a9a40b78c978dd117279bda~mv2.jpg" />
 
   <link rel="stylesheet" href="../assets/css/style.css" />
 
   <style>
-    /* KMT-only small enhancements */
-    .heroKmt{
-      padding:22px;
-      display:grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap:16px;
-      position:relative;
-      overflow:hidden;
+    :root{
+      --glass: rgba(255,255,255,.72);
+      --line2: rgba(229,231,235,.90);
+      --shadowX: 0 26px 60px rgba(2,6,23,.12);
+      --shadowY: 0 12px 30px rgba(2,6,23,.10);
     }
-    .heroKmt:before{
+
+    body{
+      background:
+        radial-gradient(900px 320px at 10% 10%, rgba(37,99,235,.09), transparent 60%),
+        radial-gradient(760px 320px at 90% 0%, rgba(59,130,246,.07), transparent 58%),
+        #ffffff;
+    }
+
+    .wrapK{ max-width:1040px; margin:0 auto; padding:18px 14px 24px; }
+
+    /* hero image */
+    .hero{
+      position:relative;
+      border-radius:28px;
+      overflow:hidden;
+      border:1px solid var(--line2);
+      box-shadow:var(--shadowX);
+      background:#fff;
+    }
+    .hero img{
+      width:100%;
+      height:auto;
+      display:block;
+      object-fit:cover;
+    }
+    .hero:after{
       content:"";
       position:absolute; inset:-1px;
       background:
-        radial-gradient(700px 260px at 20% 10%, rgba(37,99,235,.10), transparent 60%),
-        radial-gradient(560px 260px at 90% 0%, rgba(59,130,246,.08), transparent 58%);
+        radial-gradient(800px 260px at 15% 10%, rgba(37,99,235,.14), transparent 60%),
+        radial-gradient(700px 240px at 90% 0%, rgba(59,130,246,.10), transparent 58%),
+        linear-gradient(180deg, rgba(2,6,23,.02), rgba(2,6,23,.06));
+      pointer-events:none;
+      mix-blend-mode:multiply;
+    }
+
+    /* overlay panel */
+    .heroOverlay{
+      position:absolute;
+      left:14px; right:14px; bottom:14px;
+      padding:16px 16px;
+      border-radius:24px;
+      border:1px solid rgba(255,255,255,.55);
+      background:rgba(255,255,255,.72);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 18px 45px rgba(2,6,23,.18);
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .heroText h1{
+      margin:0;
+      font-size:22px;
+      font-weight:1000;
+      letter-spacing:-.03em;
+      line-height:1.1;
+      color:var(--ink);
+    }
+    .heroText p{
+      margin:6px 0 0;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.45;
+      font-weight:800;
+    }
+
+    /* WOW CTA button */
+    .ctaStack{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      align-items:flex-end;
+      flex:0 0 auto;
+    }
+    .wowBtn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:14px 16px;
+      border-radius:18px;
+      font-weight:1000;
+      text-decoration:none;
+      border:1px solid rgba(37,99,235,.25);
+      background: linear-gradient(180deg, rgba(37,99,235,.16), rgba(37,99,235,.04));
+      color:#0b2d7a;
+      box-shadow: 0 18px 40px rgba(2,6,23,.14);
+      position:relative;
+      overflow:hidden;
+      min-width: 220px;
+      text-align:center;
+    }
+    .wowBtn:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(260px 80px at 20% 0%, rgba(255,255,255,.75), transparent 60%),
+        radial-gradient(260px 80px at 80% 100%, rgba(255,255,255,.55), transparent 60%);
+      opacity:.9;
       pointer-events:none;
     }
-    .heroKmt > *{ position:relative; }
-    .logoBigWrap{
-      border-radius:22px;
+    .wowBtn:hover{ transform: translateY(-2px); }
+    .wowBtn small{
+      display:block;
+      font-size:11.5px;
+      color:rgba(11,45,122,.78);
+      font-weight:900;
+      margin-top:2px;
+      position:relative;
+      z-index:1;
+    }
+    .wowBtn span{
+      position:relative;
+      z-index:1;
+      font-size:14.5px;
+      letter-spacing:-.01em;
+    }
+
+    .ghostLink{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 12px;
+      border-radius:999px;
       border:1px solid rgba(229,231,235,.9);
-      background:rgba(255,255,255,.95);
-      box-shadow:var(--shadow2);
-      padding:16px;
+      background:rgba(255,255,255,.86);
+      box-shadow:var(--shadowY);
+      text-decoration:none;
+      color:var(--ink);
+      font-weight:1000;
+      font-size:12.5px;
+      backdrop-filter: blur(8px);
+    }
+    .ghostLink:hover{ transform: translateY(-1px); }
+
+    /* content cards */
+    .grid2{
       display:grid;
-      place-items:center;
-      min-height: 220px;
+      grid-template-columns: 1.2fr .8fr;
+      gap:12px;
+      margin-top:14px;
     }
-    .logoBig{
-      width:min(360px, 80%);
-      height:auto;
-      object-fit:contain;
+    .cardX{
+      border-radius:24px;
+      border:1px solid rgba(229,231,235,.9);
+      background:rgba(255,255,255,.86);
+      box-shadow:var(--shadowY);
+      padding:16px;
+      backdrop-filter: blur(10px);
     }
-    .badgeRow{
+    .cardX h2{
+      margin:0 0 8px;
+      font-weight:1000;
+      letter-spacing:-.02em;
+      font-size:16px;
+    }
+    .cardX p, .cardX li{
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.6;
+      font-weight:800;
+    }
+    .badges{
       display:flex;
       flex-wrap:wrap;
       gap:10px;
@@ -60,201 +196,114 @@
       border-radius:999px;
       border:1px solid rgba(229,231,235,.9);
       background:#fff;
-      box-shadow:0 1px 0 rgba(2,6,23,.04);
-      font-weight:900;
-      font-size:13px;
-      color:var(--navy);
-    }
-    .kmtList{
-      margin:10px 0 0;
-      padding-left:18px;
-      color:var(--muted);
-      line-height:1.65;
-      font-size:13px;
-    }
-    .mapCard{
-      padding:14px;
-      border-radius:18px;
-      border:1px solid rgba(229,231,235,.9);
-      background:#fff;
-      box-shadow:var(--shadow2);
-    }
-    .mapHint{
-      margin:10px 0 0;
-      color:var(--muted);
-      font-size:12.5px;
-      line-height:1.5;
+      font-weight:1000;
+      font-size:12.8px;
+      box-shadow: 0 10px 22px rgba(2,6,23,.07);
+      white-space:nowrap;
     }
 
-    @media (max-width: 980px){
-      .heroKmt{ grid-template-columns:1fr; }
-      .logoBigWrap{ min-height: 200px; }
+    .miniBtnRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:12px;
     }
 
-    @media print{
-      .topbar, .stickyCall{ display:none !important; }
-      body{ background:#fff !important; }
-      .card, .mapCard{ box-shadow:none !important; border:1px solid #ddd !important; }
-      .wrap{ width:100% !important; margin:0 !important; }
-      .main{ padding:0 !important; }
-      .heroKmt{ padding:10mm !important; }
-      a{ text-decoration:none !important; }
+    @media(max-width: 900px){
+      .heroOverlay{ flex-direction:column; align-items:flex-start; }
+      .ctaStack{ align-items:stretch; width:100%; }
+      .wowBtn{ width:100%; min-width:auto; }
+      .grid2{ grid-template-columns:1fr; }
     }
   </style>
 </head>
 
 <body>
-  <a class="skip" href="#main">본문으로</a>
+  <div class="wrapK">
 
-  <div class="page">
-    <header class="topbar">
-      <div class="wrap topbar__inner">
-        <div class="brand">
-          <div class="brand__title">계명태권도</div>
-          <div class="brand__sub">아이의 자신감과 안전이 자라는 곳</div>
-        </div>
+    <!-- Top simple nav -->
+    <div class="ctaRow" style="display:flex; justify-content:space-between; align-items:center; gap:10px; margin-bottom:12px;">
+      <a class="btn" href="../">안전 허브로</a>
+      <a class="btn" href="../pages/about/">운영 안내</a>
+    </div>
 
-        <div class="ctaRow">
-          <a class="btn" href="../">안전 허브</a>
-          <a class="btn" href="../pages/about/">운영 안내</a>
-        </div>
-      </div>
-    </header>
-
-    <main id="main" class="wrap main">
-      <!-- HERO -->
-      <section class="card heroKmt">
-        <div>
-          <h1 class="hero__title" style="margin:0 0 10px;">
-            아이의 자신감이 자라고,<br/>
-            <span class="accent">안전한 습관이 만들어지는 곳</span>
-          </h1>
-
-          <p class="hero__desc" style="margin:0 0 10px;">
-            공익 목적 <strong>어린이 안전 QR 허브</strong>는 “일상에서 바로 쓰는 안전”을 위해 제작되었습니다.<br/>
-            그 안전한 습관을 <strong>아이의 성장</strong>으로 연결하는 현장이 바로 계명태권도입니다.
-          </p>
-
-          <div class="badgeRow" aria-label="핵심 특징">
-            <div class="badge">유치부·초등 전문</div>
-            <div class="badge">안전 중심 지도</div>
-            <div class="badge">자신감·기초체력</div>
-            <div class="badge">생활습관·예절</div>
-          </div>
-
-          <ul class="kmtList">
-            <li><strong>안전</strong>: 규칙·질서·위기 대응을 ‘습관’으로</li>
-            <li><strong>성장</strong>: 체력·균형·집중력·자기조절</li>
-            <li><strong>자신감</strong>: 작은 성공을 쌓아 “할 수 있다”를 만드는 과정</li>
-            <li><strong>부모 안심</strong>: 아이의 변화가 보이는 지도 방식</li>
-          </ul>
-
-          <div class="ctaRow" style="margin-top:12px;">
-            <a class="btn btn--primary" href="tel:010-4477-2772">전화 상담</a>
-            <button class="btn" type="button" onclick="window.print()">인쇄/저장(PDF)</button>
-          </div>
-
-          <p class="fine" style="margin-top:10px;">
-            * 본 페이지는 안내용이며, 프로그램·운영은 현장 상황에 따라 조정될 수 있습니다.
+    <!-- HERO -->
+    <section class="hero" aria-label="계명태권도 소개">
+      <img src="https://static.wixstatic.com/media/abf917_4b6ff29c9a9a40b78c978dd117279bda~mv2.jpg" alt="계명태권도 이미지">
+      <div class="heroOverlay">
+        <div class="heroText">
+          <h1>아이의 자신감과 안전이 자라는 곳</h1>
+          <p>
+            생활 속 안전 습관을 ‘성장’으로 연결하는 현장.<br/>
+            유치부·초등 중심, 아이 눈높이 지도.
           </p>
         </div>
 
-        <div>
-          <!-- ✅ 로고 이미지: 아래 src만 교체하면 됨 -->
-          <div class="logoBigWrap" aria-label="계명태권도 로고">
-            <!-- 예시: wix 로고 URL로 교체하세요 -->
-            <img class="logoBig" src="../assets/images/hero.png" alt="계명태권도 로고(교체 가능)" />
-          </div>
+        <div class="ctaStack">
+          <!-- ✅ 여기 링크만 바꾸면 됩니다 -->
+          <a class="wowBtn" href="https://계명태권도.com" target="_blank" rel="noopener">
+            <span>공식 홈페이지 바로가기 →</span>
+            <small>사진·시간표·상담 안내 보기</small>
+          </a>
 
-          <div class="mapCard" style="margin-top:12px;">
-            <div class="tile__title" style="margin-bottom:6px;">문의 / 위치</div>
-
-            <div class="contact__box" style="margin:0; padding:12px;">
-              <div class="kv">
-                <div class="kv__k">문의</div>
-                <div class="kv__v"><a class="link" href="tel:010-4477-2772">010-4477-2772</a></div>
-              </div>
-              <div class="kv">
-                <div class="kv__k">주소</div>
-                <div class="kv__v">울산 남구 중앙로290번길 53, 강변센트럴하이츠 상가 2층</div>
-              </div>
-              <div class="kv">
-                <div class="kv__k">바로가기</div>
-                <div class="kv__v">
-                  <a class="link" target="_blank" href="https://maps.google.com/?q=%EC%9A%B8%EC%82%B0%20%EB%82%A8%EA%B5%AC%20%EC%A4%91%EC%95%99%EB%A1%9C290%EB%B2%88%EA%B8%B8%2053">
-                    지도 열기(구글)
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <p class="mapHint">
-              👉 전단지 QR은 “안전 허브”로 연결되고,<br/>
-              그 안에서 계명태권도가 자연스럽게 안내됩니다.
-            </p>
-          </div>
+          <a class="ghostLink" href="tel:010-4477-2772">📞 010-4477-2772 전화 상담</a>
         </div>
-      </section>
-
-      <!-- SIMPLE IMPACT SECTION -->
-      <section class="section card contact" style="padding:18px;">
-        <div class="contact__left">
-          <h2 class="section__title">임팩트 문구(전단지 뒷면 느낌)</h2>
-          <p class="section__sub">짧고 강하게, 부모 시선으로</p>
-
-          <div class="grid" style="grid-template-columns:repeat(2,1fr);">
-            <div class="tile">
-              <div class="tile__title">아이의 하루가 달라집니다</div>
-              <div class="tile__desc">자신감 · 예절 · 집중력 · 체력</div>
-            </div>
-            <div class="tile">
-              <div class="tile__title">안전한 습관은 훈련됩니다</div>
-              <div class="tile__desc">규칙·질서·위기대응 ‘기본’ 만들기</div>
-            </div>
-            <div class="tile">
-              <div class="tile__title">부모가 편해집니다</div>
-              <div class="tile__desc">아이 변화가 “보이는” 지도</div>
-            </div>
-            <div class="tile">
-              <div class="tile__title">시작은 가볍게</div>
-              <div class="tile__desc">상담/체험 안내는 전화로</div>
-            </div>
-          </div>
-
-          <div class="ctaRow" style="margin-top:10px;">
-            <a class="btn btn--primary" href="tel:010-4477-2772">지금 문의하기</a>
-            <a class="btn" href="../">안전 허브 보기</a>
-          </div>
-        </div>
-
-        <div class="contact__right">
-          <div class="miniCard">
-            <div class="miniCard__title">오늘의 한 줄</div>
-            <div class="miniCard__quote">“아이의 안전은 <strong>습관</strong>이고, 습관은 <strong>환경</strong>입니다.”</div>
-          </div>
-
-          <div class="miniCard" style="margin-top:12px;">
-            <div class="miniCard__title">QR 활용</div>
-            <ul class="bullets">
-              <li>가족 단톡방에 안전 허브 링크 공유</li>
-              <li>냉장고/현관에 전단지 코팅 부착</li>
-              <li>아이에게 ‘도움 요청 문장’ 반복</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <div class="wrap footer__inner">
-        <div class="footer__left">
-          <strong>계명태권도</strong>
-          <span class="sep">·</span>
-          <span>안전 허브 연계 안내</span>
-        </div>
-        <div class="footer__right"><span id="year"></span></div>
       </div>
-    </footer>
+    </section>
+
+    <!-- CONTENT -->
+    <section class="grid2">
+      <div class="cardX">
+        <h2>왜 ‘바로가기’를 누르고 싶어질까?</h2>
+        <p style="margin:0;">
+          부모님이 원하는 건 “설명”보다 <strong>확인</strong>입니다.<br/>
+          홈페이지에서 <strong>사진/분위기/시간표</strong>를 한 번에 보게 해드리면 결심이 빨라집니다.
+        </p>
+
+        <div class="badges" aria-label="핵심 특징">
+          <div class="badge">유치부·초등 전문</div>
+          <div class="badge">안전 중심 지도</div>
+          <div class="badge">자신감·집중력</div>
+          <div class="badge">기초체력·균형</div>
+          <div class="badge">예절·생활습관</div>
+        </div>
+
+        <ul style="margin:12px 0 0; padding-left:18px;">
+          <li><strong>안전</strong>: 규칙·질서·위기 대응을 습관으로</li>
+          <li><strong>성장</strong>: 체력·균형·집중력·자기조절</li>
+          <li><strong>자신감</strong>: 작은 성공을 쌓아 “할 수 있다”를 만드는 과정</li>
+        </ul>
+
+        <div class="miniBtnRow">
+          <a class="btn btn--primary" href="https://계명태권도.com" target="_blank" rel="noopener">홈페이지 바로가기</a>
+          <a class="btn" href="../">안전 허브로 돌아가기</a>
+        </div>
+      </div>
+
+      <div class="cardX">
+        <h2>위치 / 문의</h2>
+        <p style="margin:0;">
+          문의: <a class="link" href="tel:010-4477-2772">010-4477-2772</a><br/>
+          울산 남구 중앙로290번길 53,<br/>강변센트럴하이츠 상가 2층
+        </p>
+
+        <div class="miniBtnRow" style="margin-top:12px;">
+          <a class="btn" target="_blank" rel="noopener"
+             href="https://maps.google.com/?q=%EC%9A%B8%EC%82%B0%20%EB%82%A8%EA%B5%AC%20%EC%A4%91%EC%95%99%EB%A1%9C290%EB%B2%88%EA%B8%B8%2053">
+            지도 열기
+          </a>
+          <a class="btn" href="../pages/checklist/">체크리스트</a>
+        </div>
+
+        <p style="margin:12px 0 0; font-size:12px; color:var(--muted);">
+          * 본 페이지는 안내용입니다. 자세한 내용은 공식 홈페이지에서 확인하세요.
+        </p>
+      </div>
+    </section>
+
+    <p style="margin:16px 0 8px; text-align:center; color:rgba(15,23,42,.62); font-size:12px; font-weight:800;">
+      QR로 들어오신 분을 위한 안내 페이지입니다. 긴급 상황은 119/112가 최우선입니다.
+    </p>
   </div>
 
   <script src="../assets/js/app.js"></script>
